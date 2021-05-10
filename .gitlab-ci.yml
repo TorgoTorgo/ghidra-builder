@@ -292,3 +292,51 @@ macOS/dmg/9.2.2:
         - macOS/9.2.2
     variables:
         GHIDRA_VERSION: "9.2.2"
+
+# --- 9.2.3 ---
+
+linux/9.2.3:
+    extends: .build_docker
+    variables:
+        TAG: Ghidra_9.2.3_build
+        GHIDRA_VERSION: "9.2.3"
+
+macOS/9.2.3:
+    extends: .build_docker
+    when: manual
+    variables:
+        TAG: Ghidra_9.2.3_build
+        GHIDRA_VERSION: "9.2.3"
+    tags:
+        - macOS
+
+macOS/dmg/9.2.3:
+    extends: .bundler
+    needs:
+        - macOS/9.2.3
+    variables:
+        GHIDRA_VERSION: "9.2.3"
+
+# --- 9.2.4 ---
+
+linux/9.2.4:
+    extends: .build_docker
+    variables:
+        TAG: Ghidra_9.2.4_build
+        GHIDRA_VERSION: "9.2.4"
+
+macOS/9.2.4:
+    extends: .build_docker
+    when: manual
+    variables:
+        TAG: Ghidra_9.2.4_build
+        GHIDRA_VERSION: "9.2.4"
+    tags:
+        - macOS
+
+macOS/dmg/9.2.4:
+    extends: .bundler
+    needs:
+        - macOS/9.2.4
+    variables:
+        GHIDRA_VERSION: "9.2.4"
