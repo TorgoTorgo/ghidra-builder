@@ -22,12 +22,12 @@ jobs:
           - os: 'macos-latest'
             dependency_script: "brew install bison flex curl"
           # Disable windows because I can't figure this out right now
-          #- os: 'windows-latest'
-          #  dependency_script: |
-          #    choco install visualstudio2017buildtools
-          #    choco install winflexbison
-          #    ren "C:\ProgramData\chocolatey\bin\win_bison.exe" "bison.exe"
-          #    ren "C:\ProgramData\chocolatey\bin\win_flex.exe" "flex.exe"
+          - os: 'windows-latest'
+            dependency_script: |
+              choco install visualstudio2017buildtools
+              choco install winflexbison
+              ren "C:\ProgramData\chocolatey\bin\win_bison.exe" "bison.exe"
+              ren "C:\ProgramData\chocolatey\bin\win_flex.exe" "flex.exe"
         ghidra:
           - version: '9.2.4'
             ref: 'Ghidra_9.2.4_build'
