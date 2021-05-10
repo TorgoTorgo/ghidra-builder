@@ -72,7 +72,7 @@ jobs:
         run: git log --oneline -n 15
         working-directory: ./ghidra
       - name: "Fetch dependencies"
-        run: "gradle --init-script gradle/support/fetchDependencies.gradle init"
+        run: "gradle --quiet --init-script gradle/support/fetchDependencies.gradle init"
         working-directory: ./ghidra
       - name: "Building Ghidra ${{ matrix.ghidra.version }} from ${{ matrix.ghidra.ref }}"
         run: "gradle buildGhidra"
